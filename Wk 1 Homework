@@ -1,0 +1,51 @@
+from datetime import datetime
+import calendar
+
+def pet_info():
+    pet_type = "dog"
+    pet_name = "Rosie"
+    print(f"I have a {pet_type} and her name is {pet_name}.")
+
+def user_info():
+    first_name = input("Enter your first name: ")
+    current_age = int(input("Enter your current age: "))
+    yearly_savings = float(input("Enter your yearly savings: "))
+
+    future_age = current_age + 10
+    five_year_savings = yearly_savings * 5
+    monthly_savings = yearly_savings / 12
+
+    print(f"Hello {first_name}! You are currently {current_age} years old.")
+    print(f"In 10 years, you will be {future_age} years old.")
+    print(f"If you save ${yearly_savings} each year, in 5 years you will have saved ${five_year_savings}.")
+    print(f"Your average monthly savings is ${monthly_savings:.2f}.")
+
+def seconds_in_month():
+    current_date = datetime.now()
+    days_in_month = calendar.monthrange(current_date.year, current_date.month)[1]
+    seconds = days_in_month * 24 * 60 * 60
+
+    print(f"The number of seconds in {calendar.month_name[current_date.month]} is {seconds}")
+
+def egg_calculator():
+    egg_count = int(input("Enter the number of eggs: "))
+    dozens = egg_count // 12
+    remainder = egg_count % 12
+
+    print(f"This makes {dozens} dozen eggs with {remainder} left over")
+
+def main():
+    print("\n--- Question 1: Pet Information ---")
+    pet_info()
+
+    print("\n--- Question 2: User Information ---")
+    user_info()
+
+    print("\n--- Question 3: Seconds in Month ---")
+    seconds_in_month()
+
+    print("\n--- Question 4: Egg Calculator ---")
+    egg_calculator()
+
+if __name__ == "__main__":
+    main()
