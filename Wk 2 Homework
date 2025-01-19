@@ -1,0 +1,61 @@
+# Part 1: Working with Variables and Representations
+
+# Task 1: Print the value of a variable in binary and decimal form
+x = 31
+print("Task 1: Binary and Decimal Representation")
+print(x, bin(x), hex(x))
+print()
+
+# Task 2: Identify errors with incorrect input types
+print("Task 2: Incorrect Input Type Error")
+x = 1.825
+print("# Error: bin() only works with integers.")
+x = 18
+print("Corrected value:", bin(x))
+print()
+
+# Task 3: Assign binary or hexadecimal values to variables
+print("Task 3: Binary and Hexadecimal Assignments")
+y = 0b1011
+z = 0xA3
+print("Binary value (y):", y)
+print("Hexadecimal value (z):", z)
+print()
+
+# Task 4: Add numbers in any representation
+print("Task 4: Addition of Numbers in Any Representation")
+w = x + y + z
+print("The sum is:", w)
+print()
+
+# Part 2: Compression Calculation
+
+print("Part 2: Compression Calculation")
+original_size = 240
+dictionary_size = 25
+compressed_text_size = 148
+
+total_compressed = compressed_text_size + dictionary_size
+percent_compression = 1 - (total_compressed / original_size)
+
+print("Compressed text size:", compressed_text_size, "characters")
+print("  Dictionary size:", dictionary_size, "characters")
+print("            Total:", total_compressed, "characters")
+print("  Original text size:", original_size, "characters")
+print("      Compression:", round(percent_compression * 100, 2), "%")
+print()
+
+# Part 3: Extra Credit - Two's Complement
+
+print("Part 3: Two's Complement")
+def twos_complement(n):
+    if -128 <= n <= 127:
+        if n < 0:
+            n = (1 << 8) + n
+        return f'{n:08b}'
+    else:
+        return "Number out of range (-128 to 127)."
+
+# User input
+num = int(input("Enter a number (-128 to 127): "))
+print("Two's complement:", twos_complement(num))
